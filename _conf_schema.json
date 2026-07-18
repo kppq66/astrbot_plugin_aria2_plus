@@ -1,0 +1,45 @@
+{
+  "aria2_url": {
+    "description": "aria2 RPC 地址",
+    "type": "string",
+    "hint": "aria2 的 JSON-RPC 接口地址，例如 http://127.0.0.1:6800/jsonrpc",
+    "obvious_hint": true,
+    "default": "http://127.0.0.1:6800/jsonrpc"
+  },
+  "token": {
+    "description": "aria2 RPC 密钥 (rpc-secret)",
+    "type": "string",
+    "hint": "对应 aria2 启动参数中的 --rpc-secret，未设置密钥则留空",
+    "default": ""
+  },
+  "download_dir": {
+    "description": "默认下载保存目录",
+    "type": "string",
+    "hint": "留空则使用 aria2 自身的默认下载目录。注意：这是 aria2 所在服务器/容器上的路径，而不是 AstrBot 所在机器的路径。发送 /下载 指令时也可以临时指定目录，会覆盖此默认值",
+    "default": ""
+  },
+  "proxy": {
+    "description": "代理地址",
+    "type": "string",
+    "hint": "访问 aria2 RPC 接口时使用的代理，例如 http://127.0.0.1:7890 或 socks5://127.0.0.1:1080。留空表示不使用代理，直连 aria2_url。使用 socks5 代理需要额外安装 PySocks（requests[socks]）",
+    "default": ""
+  },
+  "qq_notify": {
+    "description": "下载完成/失败后自动通知",
+    "type": "bool",
+    "hint": "开启后，下载任务完成或出错时会通过 AstrBot 主动推送消息到发起下载的会话（是否生效取决于消息平台是否支持主动消息）",
+    "default": true
+  },
+  "notify_interval": {
+    "description": "通知轮询间隔（秒）",
+    "type": "int",
+    "hint": "后台检查下载任务状态的时间间隔。值越小通知越及时，但请求 aria2 越频繁",
+    "default": 10
+  },
+  "allowed_users": {
+    "description": "允许使用下载功能的用户白名单",
+    "type": "list",
+    "hint": "填写允许使用下载相关指令与 AI 工具的用户 ID（可用 AstrBot 内置的 /sid 指令获取）。留空表示不限制，所有人都可以使用下载功能",
+    "default": []
+  }
+}

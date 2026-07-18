@@ -1,0 +1,6 @@
+name: astrbot_plugin_aria2_plus
+display_name: aria2增强下载助手
+desc: AstrBot aria2 RPC下载管理插件，支持自定义下载目录、代理访问、下载完成自动QQ通知、AI自动调用与用户白名单
+version: 2.4.0
+author: pkq
+repo: https://github.com/kppq66/astrbot_plugin_aria2_plus
